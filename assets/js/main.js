@@ -40,6 +40,7 @@ function createMediaElement(project) {
             </picture>`
 }
 
+// if on mobile video should autoplay, otherwise it only plays on hover
 function setupVideoBehaviour (imageItem) {
     const video = imageItem.querySelector("video")
     if(!video) return;
@@ -65,71 +66,12 @@ function renderProjects(data) {
         imageItem.innerHTML = createMediaElement(project);
         setupVideoBehaviour(imageItem);
 
+        // insert the number and title into the DOM
         textItem.innerHTML = `<span>${num}</span><h3>${project.title}</h3>`;
 
+        // append all to parent containers
         item.appendChild(textItem);
         item.appendChild(imageItem);
         containerWorks.appendChild(item);
     });
 }
-
-// function renderProjects(data) {
-    
-//     const works = data.websites;
-//     containerWorks.innerHTML = "";
-
-//     works.forEach((project, i) => {
-//         const item = document.createElement("div");
-//         const textItem = document.createElement("div");
-//         const imageItem = document.createElement("div");
-
-//         item.classList.add("websites-content");
-//         textItem.classList.add("websites-text-container");
-//         imageItem.classList.add("websites-image-container");
-
-//         
-//         let num = i < 10 ? "0" + String(i + 1) : String(i + 1);
-
-//         // first check viewport size
-//         const isMobile = window.innerWidth < 600;
-//         
-//         const videoSrc = isMobile ? `assets/videos/${project.id}/video-02.mp4` : `assets/videos/${project.id}/video-01.mp4`
-
-//         // if the video property exists, render that instead of the image
-//         if(project.videos !== undefined) {
-//             imageItem.innerHTML = `
-//                 <video muted loop playsinline poster="${project.images.desktop}">
-//                 <source src ="${videoSrc}" type="video/mp4">
-//                 </video>
-//             `
-//         // else render the thumbnail image
-//         } else {
-//             imageItem.innerHTML = `
-//             <picture>
-//                 <source media="(min-width: 600px)" srcset="${project.images.desktop}">
-//                 <img src="${project.images.mobile}" alt="${project.title}" loading="lazy">
-//             </picture>
-//         `
-//         }
-
-//         const video = imageItem.querySelector("video");
-//         if(video && isMobile !== true) {
-//             video.addEventListener("mouseenter", () => video.play())
-//             video.addEventListener("mouseleave", () => video.pause())
-//         }
-//         if(video && isMobile) {
-//             video.play()
-//         }
-        
-//         // insert the number and title into the DOM  
-//         textItem.innerHTML = `
-//         <span>${num}</span> 
-//         <h3>${project.title}</h3>
-//         `;
-
-//         // append all to parent containers
-//         item.appendChild(textItem);
-//         item.appendChild(imageItem);
-//         containerWorks.appendChild(item);
-//     });
-// }
