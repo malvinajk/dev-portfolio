@@ -1,0 +1,48 @@
+{
+    "websites": [
+        {
+            "id": "peggy-atherton-portfolio",
+            "title": "Peggy Atherton Portfolio",
+            "images": {
+                "mobile": "../assets/images/websites/peggy-atherton/thumbnail-01.png",
+                "desktop": "../assets/images/websites/peggy-atherton/thumb-desktop.png"
+            },
+            "videos": "../assets/videos/peggy-atherton-portfolio/video-01.mp4",
+            "about": "",
+            "case study": "",
+            "link": "https://peggyatherton.com/"
+        },
+        {
+            "id": "writing-portfolio",
+            "title": "Writing Portfolio",
+            "images": {
+               "mobile": "../assets/images/websites/writing-portfolio/thumbnail-01.png",
+               "desktop":  "../assets/images/websites/writing-portfolio/thumb-desktop.png"
+            },
+            "videos": "../assets/videos/writing-portfolio/video-01.mp4",
+            "about": "",
+            "link": "https://malvinajanasik.netlify.app/"
+        },
+        {
+            "id": "gallery-website",
+            "title": "Gallery Website",
+            "images": {
+               "mobile": "../assets/images/websites/gallery-website/thumbnail-01.png",
+               "desktop": "../assets/images/websites/gallery-website/thumb-desktop.png"
+            },
+            "about": "",
+            "link": ""
+        },
+        {
+            "id": "poetry-reader",
+            "title": "Poetry Reader",
+            "images": {
+               "mobile": "../assets/images/websites/poetry-reader/thumbnail-01.png",
+               "desktop": "../assets/images/websites/poetry-reader/thumb-desktop.png"
+            },
+            "videos": "../assets/videos/poetry-reader/video-01.mp4",
+            "about": "",
+            "link": "https://malvinajk.github.io/poetry-reader/"
+        }
+    ]
+}

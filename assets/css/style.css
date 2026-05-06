@@ -1,0 +1,416 @@
+@import url("fonts.css");
+
+
+/************************** GLOBAL *************************/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-snap-type: y proximity;
+}
+
+section {
+    scroll-snap-align: start;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background-color: rgba(233, 234, 235, 1);
+    overflow-x: hidden;
+}
+
+header {
+    position: relative;
+    overflow-x: clip;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h1, h2, h4, h5, h6 {
+    font-family: "LincolnMITRE 5x7", serif;
+    font-weight: 500;
+}
+
+h3,
+p,
+span,
+li {
+    font-family: "Frasa Regular Italic", serif;
+    letter-spacing: 1px;
+}
+h3::first-letter,
+p::first-letter,
+span::first-letter,
+li::first-letter {
+    font-family: "Frasa Regular", serif;
+    font-style: normal;
+}
+
+main, header, footer {
+    padding: 2em 5em;
+}
+
+#work-section h2, 
+#contact-section h2,
+#about-section h2 {
+    border-bottom: 1px black solid;
+    padding-bottom: 0.5em;
+    font-size: 3rem;
+}
+
+#work-section,
+#contact-section,
+#about-section {
+    min-height: 100vh;
+}
+/*************************** NAV ****************************/
+
+.top-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2em;
+    padding: 0;
+    margin: 0;
+    font-size: 1.6rem;
+    padding-bottom: 7em;
+}
+
+.logo {
+    font-size: 1.2rem;
+}
+.logo-container {
+    display: flex;
+    align-items: baseline;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.logo-container > *:nth-child(3) {
+    padding-left: 0.5rem;
+}
+
+h3.logo-title-hidden {
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    transition: max-width 0.5s ease-in-out;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.8rem;
+}
+
+.logo-title-hidden::first-letter {
+    font-family: "Frasa Regular Italic", serif;
+}
+
+.logo:hover h3.logo-title-hidden {
+    max-width: 300px;
+}
+
+.logo-title, .logo-title-hidden {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.push-left {
+    margin-left: auto;
+}
+
+.top-menu li a {
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.top-menu li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: black;
+
+    transition: width 0.3s ease-in-out;
+}
+
+.top-menu li a:hover::after {
+    width: 100%;
+}
+
+
+/************************** TOP SECTION *****************************/
+
+header {
+    position: relative;
+}
+
+.lincoln-letter::first-letter {
+    font-family: "LincolnMITRE 5x7", serif;
+}
+
+.top-container {
+    display: flex;
+    font-size: 2rem;
+    align-items: flex-start;
+    height: 70vh;
+    padding-bottom: 5em;
+    position: relative;
+    gap: 5em
+}
+.logo-image {
+    max-height: 40vh;
+    max-width: 50%;
+}
+
+.hero-text-container {
+    display: flex;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid black;
+}
+
+.hero-text-container > *:nth-child(3) {
+    padding-left: 1rem;
+}
+
+
+.hero-text h2, .hero-text h3 {
+    display: inline;
+    font-size: 10rem;
+    font-weight: 500;
+    background-color: transparent;
+    margin: 0;
+}
+
+.hero-text p {
+    padding-top: 0.5em;
+    line-height: 1.2em;
+    font-weight: 300;
+    font-size: 2.5rem;
+}
+
+/******************************** WORK CONTENT *************************************/
+.work-websites h2 {
+    border-bottom: 1px black solid;
+    padding-bottom: 1em;
+    font-size: 3rem;
+}
+
+.websites-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    scroll-snap-align: center;
+    padding-bottom: 2em;
+}
+
+.websites-content h3 {
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+.project-num {
+    display: inline;
+}
+
+.websites-text-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 1rem;
+    padding: 3rem 0 1rem;
+}
+.websites-text-container span {
+    font-size: 1.4rem;
+}
+
+.websites-text-container h3 {
+    margin: 0;
+}
+
+.websites-image-container,
+.websites-image-container picture,
+.websites-image-container img {
+    display: block;
+    width: 100%;
+}
+
+.work-websites {
+    padding-top: 2.5em;
+}
+.websites-content img,
+.websites-content video {
+    border-radius: 15px;
+    max-height: 80vh;
+    max-width: 80vw;
+}
+
+.websites-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5em;
+}
+
+/******************************* BACKGROUND GRADIENT *********************************/
+
+.gradient, .gradient-top {
+    position: absolute;
+    z-index: -99;
+    top: 90px;
+    left: 900px;
+    width: 1000px;
+    height: 800px;
+    background-color: #1242FF;
+    background: radial-gradient(ellipse, rgba(18, 66, 255, 0.4) 0%, rgba(233, 234, 235, 1) 60%);
+}
+
+.gradient-top {
+    background-color: rgb(219 250 120);
+    background: radial-gradient(ellipse, rgba(219, 250, 120, 0.8) 0%, rgba(233, 234, 235, 1) 60%);
+    top: -70px;
+    left: -200px;
+    width: 500px;
+    height: 300px;
+}
+
+/***************************** ABOUT ****************************/
+
+
+
+/************************* RESPONSIVE **************************/
+
+@media (max-width: 600px) {
+    .top-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+        padding-top: 3em;
+        gap: 1.6em;
+    }
+    main,
+    header,
+    footer {
+        padding: 2em;
+    }
+    .hero-title.lincoln-letter {
+            font-size: 4rem;
+    }
+    .gradient {
+        left: 0px
+    }
+    .logo:hover h3.logo-title-hidden {
+        max-width: 0;
+    }
+    .websites-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .websites-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .websites-content img {
+        align-items: center;
+    }
+    
+    
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+    .top-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+        padding-top: 3em;
+        gap: 1.6em;
+    }
+    main,
+    header,
+    footer {
+        padding: 2em;
+    }
+    .hero-title.lincoln-letter {
+            font-size: 5rem;
+    }
+    .gradient {
+        left: 100px;
+    }
+    .logo:hover h3.logo-title-hidden {
+        max-width: 0;
+    }
+    .websites-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .websites-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .websites-content img {
+        align-items: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .top-container {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: center;
+        padding-top: 3em;
+        gap: 1.6em;
+    }
+    main,
+    header,
+    footer {
+        padding: 2em;
+    }
+    .hero-title.lincoln-letter {
+        font-size: 6rem;
+    }
+    .gradient {
+        left: 500px;
+    }
+    .logo:hover h3.logo-title-hidden {
+        max-width: 0;
+    }
+    .websites-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .websites-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .websites-content img {
+        align-items: center;
+    }
+}
