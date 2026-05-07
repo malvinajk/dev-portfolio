@@ -248,27 +248,47 @@ header {
     margin: 0;
 }
 
-.websites-image-container,
+/* .websites-image-container,
 .websites-image-container picture,
 .websites-image-container img {
     display: block;
     width: 100%;
-}
+} */
 
 .work-websites {
     padding-top: 2.5em;
 }
+.websites-image-container {
+    display: flex;
+    justify-content: center;
+}
+
 .websites-content img,
 .websites-content video {
     border-radius: 15px;
     max-height: 80vh;
-    max-width: 80vw;
+    max-width: 100vw;
 }
 
 .websites-container {
     display: flex;
     flex-direction: column;
     padding-bottom: 5em;
+}
+
+.push-right {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.info-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.open-panel {
+    max-height: fit-content;
 }
 
 /******************************* BACKGROUND GRADIENT *********************************/
@@ -332,9 +352,7 @@ header {
         justify-content: center;
         align-items: flex-start;
     }
-    .websites-content img {
-        align-items: center;
-    }
+
     
     
 }

@@ -55,10 +55,12 @@ function renderProjects(data) {
         const item = document.createElement("div");
         const textItem = document.createElement("div");
         const imageItem = document.createElement("div");
+        const infoPanel = document.createElement("div");
 
         item.classList.add("websites-content");
         textItem.classList.add("websites-text-container");
         imageItem.classList.add("websites-image-container");
+        infoPanel.classList.add("info-panel");
 
         // number of the project, concat a "0" if num < 10
         const num = i < 10 ? "0" + String(i + 1) : String(i + 1);
@@ -67,11 +69,26 @@ function renderProjects(data) {
         setupVideoBehaviour(imageItem);
 
         // insert the number and title into the DOM
-        textItem.innerHTML = `<span>${num}</span><h3>${project.title}</h3>`;
+        textItem.innerHTML = `<span>${num}</span><h3>${project.title}</h3><span class="push-right more-info-btn">More Info +</span>`;
+
+        const moreInfoBtn = textItem.querySelector(".more-info-btn");
 
         // append all to parent containers
         item.appendChild(textItem);
+        item.appendChild(infoPanel);
         item.appendChild(imageItem);
         containerWorks.appendChild(item);
+
+        moreInfoBtn.addEventListener("click", () => {
+            infoPanel.classList.toggle("open-panel");
+            moreInfoBtn.textContent = infoPanel.classList.contains("open-panel") ? "Less Info –" : "More Info +"
+        })
+        infoPanel.innerHTML = `
+        <p>${project.description}</p>`
     });
 }
+
+
+
+
+
