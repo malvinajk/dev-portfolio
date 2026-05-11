@@ -2,14 +2,19 @@
     "websites": [
         {
             "id": "peggy-atherton-portfolio",
-            "title": "Peggy Atherton Portfolio",
+            "title": "Peggy Atherton",
             "images": {
                 "mobile": "../assets/images/websites/peggy-atherton/thumbnail-01.png",
                 "desktop": "../assets/images/websites/peggy-atherton/thumb-desktop.png"
             },
             "videos": "../assets/videos/peggy-atherton-portfolio/video-01.mp4",
             "description": "Built and designed a website for an artist with an established practice but no web presence, ahead of a major exhibition for an audience of gallerists, collectors, and curators. Developed a design system around the conceptual logic of the practice itself, with a JSON content layer enabling rich artwork metadata and a filtering system for easier browsing. Launched ahead of deadline with a perfect Lighthouse score across performance, best practices, and SEO.",
-            "stack": "",
+            "stack": [
+                "Code: JavaScript, CSS, HTML",
+                "Design: Figma",
+                "Media: FFmpeg, ImageMagick",
+                "Performance: Lighthouse"
+            ],
             "link": "https://peggyatherton.com/"
         },
         {
@@ -20,7 +25,12 @@
                "desktop":  "../assets/images/websites/writing-portfolio/thumb-desktop.png"
             },
             "videos": "../assets/videos/writing-portfolio/video-01.mp4",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum delectus voluptatem a doloribus laborum quod officiis porro perferendis! Perferendis optio eveniet itaque aut tempore dolores sed eaque nihil vel ut.",
+            "description": "Built a personal archive site for academic and creative writing from BA and MA studies — a first ground-up project in HTML, CSS, and vanilla JavaScript. Each essay title reveals a related image on hover, a small interaction that conveys a sense of the content before reading.",
+            "stack": [
+                "JavaScript",
+                "CSS",
+                "HTML"
+            ],
             "link": "https://malvinajanasik.netlify.app/"
         },
         {
@@ -31,6 +41,10 @@
                "desktop": "../assets/images/websites/gallery-website/thumb-desktop.png"
             },
             "description": "Designed and built a news section from scratch for a commercial contemporary art gallery, extending an existing Squarespace site with custom styling and layout. Maintained and updated the site over time, managing content, images, and structural changes to keep the platform current. The gallery has since closed — the site was recovered and documented via the Wayback Machine.",
+            "stack": [
+                "Squarespace",
+                "Custom CSS"
+            ],
             "link": ""
         },
         {
@@ -42,6 +56,11 @@
             },
             "videos": "../assets/videos/poetry-reader/video-01.mp4",
             "description": "Built a poetry reading app fetching authors and poems from the PoetryDB API, displayed in a resizable split layout — author names and titles on the left, full poem on the right. The resizable divider is rendered as a black dot, a design detail that evokes a full stop and reflects the nature of the content.",
+            "stack": [
+                "JavaScript", 
+                "CSS", 
+                "HTML"
+            ],
             "link": "https://malvinajk.github.io/poetry-reader/"
         }
     ]

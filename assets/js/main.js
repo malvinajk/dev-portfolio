@@ -32,12 +32,14 @@ function createMediaElement(project) {
     if(project.videos !== undefined) {
         return `<video muted loop playsinline poster="${project.images.desktop}">
                     <source src="${src}" type="video/mp4">
-                </video>`
+                </video>
+                `
     }
     return `<picture>
                 <source media="(min-width: 600px)" srcset="${project.images.desktop}">
                 <img src="${project.images.mobile}" alt="${project.title}" loading="lazy">
-            </picture>`
+            </picture>
+            `
 }
 
 // if on mobile video should autoplay, otherwise it only plays on hover
@@ -49,42 +51,59 @@ function setupVideoBehaviour (imageItem) {
         video.addEventListener("mouseleave", () => video.pause()));
 }
 
+function createTextItem(num, title) {
+    const textItem = document.createElement("div");
+    textItem.classList.add("websites-text-container");
+    textItem.innerHTML = `<span>${num}</span><h3>${title}</h3><span class="push-right more-info-btn">More Info +</span>`;
+    return textItem;
+}
+
+function createInfoPanel(project) {
+    const infoPanel = document.createElement("div");
+    const stackPanel = document.createElement("div");
+    infoPanel.classList.add("info-panel");
+    stackPanel.classList.add("stack-panel");
+    infoPanel.innerHTML = `<p>${project.description}</p>`;
+    stackPanel.innerHTML = createMarquee(project.stack);
+    infoPanel.appendChild(stackPanel);
+    return infoPanel;
+}
+
+function createMarquee(stack) {
+    const stackStr = (stack.join(" • ") + " • ").repeat(5);
+    const duration = stackStr.length * 0.15;
+    return `<div class="marquee-track" style="animation-duration:${duration}s">
+                <h4>${stackStr}</h4>
+                <h4>${stackStr}</h4>
+            </div>`;
+}
+
 function renderProjects(data) {
     containerWorks.innerHTML = "";
     data.websites.forEach((project, i) => {
         const item = document.createElement("div");
-        const textItem = document.createElement("div");
         const imageItem = document.createElement("div");
-        const infoPanel = document.createElement("div");
+        const num = i < 10 ? "0" + String(i + 1) : String(i + 1);
 
         item.classList.add("websites-content");
-        textItem.classList.add("websites-text-container");
         imageItem.classList.add("websites-image-container");
-        infoPanel.classList.add("info-panel");
 
-        // number of the project, concat a "0" if num < 10
-        const num = i < 10 ? "0" + String(i + 1) : String(i + 1);
+        const textItem = createTextItem(num, project.title);
+        const infoPanel = createInfoPanel(project);
 
         imageItem.innerHTML = createMediaElement(project);
         setupVideoBehaviour(imageItem);
 
-        // insert the number and title into the DOM
-        textItem.innerHTML = `<span>${num}</span><h3>${project.title}</h3><span class="push-right more-info-btn">More Info +</span>`;
-
         const moreInfoBtn = textItem.querySelector(".more-info-btn");
+        moreInfoBtn.addEventListener("click", () => {
+            infoPanel.classList.toggle("open-panel");
+            moreInfoBtn.textContent = infoPanel.classList.contains("open-panel") ? "Less Info –" : "More Info +"
+        });
 
-        // append all to parent containers
         item.appendChild(textItem);
         item.appendChild(infoPanel);
         item.appendChild(imageItem);
         containerWorks.appendChild(item);
-
-        moreInfoBtn.addEventListener("click", () => {
-            infoPanel.classList.toggle("open-panel");
-            moreInfoBtn.textContent = infoPanel.classList.contains("open-panel") ? "Less Info –" : "More Info +"
-        })
-        infoPanel.innerHTML = `
-        <p>${project.description}</p>`
     });
 }
 
