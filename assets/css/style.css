@@ -81,7 +81,6 @@ main, header, footer {
 }
 
 #work,
-#contact,
 #about {
     min-height: 100vh;
 }
@@ -359,13 +358,22 @@ header {
 .about-container {
     padding: 2em 0;
     display: flex;
-    gap: 5em;
+    gap: 3em;
 }
 
 .about-content {
-    width: 50%;
-    text-align: justify;
     line-height: 2em;
+    flex-shrink: 5;
+}
+
+#identifier {
+    font-size: 3rem;
+}
+
+#photo-me {
+    max-width: 30%;
+    max-height: fit-content;
+    border-radius: 20px;
 }
 
 .about-container ul {
@@ -376,6 +384,11 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+}
+
+.about-container p {
+    font-size: 1.2rem;
+    text-align: justify;
 }
 
 .services-container {
@@ -408,14 +421,109 @@ header {
 
 .about-container li {
     display: flex;
-    padding-bottom: 1.5rem;
+    padding-bottom: 2rem;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 1.5rem;
     font-size: 3rem;
 }
 
+/**************************** FORM *****************************/
 
+.hidden {
+    display: none;
+}
 
+.contact-container {
+    padding-top: 2em;
+    display: flex;
+    gap: 5em;
+}
+
+.contact-text p {
+    font-size: 1.5rem;
+}
+
+#smiley {
+    font-size: 5rem;
+    margin: 1em auto;
+    height: fit-content;
+    width: fit-content;
+}
+
+form p {
+    padding: 1em 0 1em 0;
+}
+
+.form-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid black;
+}
+
+.form-row label {
+    min-width: 80px;
+}
+
+.single-input,
+.double-input {
+    height: 27px;
+    width: 500px;
+    border: none;
+    background-color: inherit;
+    padding: 1em;
+}
+
+.double-input {
+    height: 200px;
+}
+
+.submit-btn {
+    padding: 0.6em;
+    border: none;
+    border-radius: 20px;
+    font-family: "LincolnMITRE 5x7", serif;
+    font-size: 1.5rem;
+    background-color: black;
+    color: rgba(233, 234, 235, 1);
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #1242FF;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+/*************************** FOOTER ****************************/
+
+#footer {
+    border-top: 2px dotted black;
+}
+
+/*********************** SUCCESS PAGE **************************/
+
+.thanks-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20em;
+    gap: 1em;
+}
+
+.back-to-page {
+    padding: 0.6em;
+    border-radius: 30px;
+    font-family: "Frasa Regular Italic", serif;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid black;
+}
 
 /************************* RESPONSIVE **************************/
 
@@ -473,6 +581,12 @@ header {
     .content-section h2 {
         font-size: 2rem;
     }  
+    .about-container {
+        flex-direction: column;
+    }
+    #photo-me {
+        max-width: fit-content;
+    }
 }
 
 @media (min-width: 601px) and (max-width: 767px) {

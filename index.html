@@ -66,25 +66,27 @@
         </section> -->
 
         <section id="about" class="about-me content-section">
-            <h2>About Me</h2>
+            <h2>About</h2>
             <div class="about-container">
                 <div class="about-content">
                     <p>I'm a full-stack developer, currently delivering freelance projects alongside a self-initiated gallery operations platform & a social media routing app. Informed by a decade working in galleries, cultural institutions, and academic environments firsthand: publishing 500+ artworks to live database under five-day deadline, reconciling physical inventories to database records, and bridging technical work with non-technical stakeholders. I build software that solves operational problems I've experienced.</p>
+                    
                 </div>
+                <img id="photo-me" src="assets/images/me-darker2.png" onmouseover="this.src='assets/images/me-in-colour.png';" onmouseout="this.src='assets/images/me-darker2.png';" alt="a photograph of me">
                 <div class="services-container">
                         <ul class="services-list">
                             <li>
                                 <span class="label">Engineering +</span>
-                                <p>Full-stack development from brief to deployed; cleam code, maintainable architechture and performance to match it.</p>
+                                <p>Clean, maintainable code; built to last beyond the deadline.</p>
                             </li>
                             <li>
-                                <span class="label">Systems +</span>
-                                <p>Every project starts with understanding how the operation works. Tools built to fit the workflow.</p>
+                                <span class="label">Design +</span>
+                                <p>Visual language born from the work itself.</p>
 
                             </li>
                             <li>
-                                <span class="label">Communication +</span>
-                                <p>A decade bridging technical and non-technical teams means the project stays clear at every stage – no jargon and no surprises.</p>
+                                <span class="label">Execution +</span>
+                                <p>Every project taken from brief to deployed.</p>
                             </li>
                         </ul>
                 </div>
@@ -92,28 +94,54 @@
 
             <div class="skills-marquee-container">
             <div class="skills marquee-track">
-                <h4> • Web Development • JavaScript • Node.js • MongoDB • Cloudinary • API Integration • Database Management • Technical Strategy • UI/UX Design • Cross-Team Collaboration</h4>
-                <h4> • Web Development • JavaScript • Node.js • MongoDB • Cloudinary • API Integration • Database Management • Technical
-                Strategy • UI/UX Design • Cross-Team Collaboration</h4>
+                <h4> • Web Development • JavaScript • Node.js • MongoDB • Cloudinary • API Integration • Database Management • Technical Strategy • UI/UX Design • Cross-Team Collaboration • Figma</h4>
+                <h4> • Web Development • JavaScript • Node.js • MongoDB • Cloudinary • API Integration • Database Management • Technical Strategy • UI/UX Design • Cross-Team Collaboration • Figma</h4>
             </div>
             </div>
         </section>
 
         <section id="contact" class="contact content-section">
-            <h2>Contact Me</h2>
+            <h2>Contact</h2>
 
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum delectus voluptatem a doloribus laborum quod officiis porro perferendis! Perferendis optio eveniet itaque aut tempore dolores sed eaque nihil vel ut.</p>
+            <div class="contact-container">
+                <div class="contact-text">
+                    <p>Looking to start a new project or just want to say hi? <br>
+                    Send me a message and I'll do my best to reply within 24 hrs!</p>
+                    <h4 id="smiley">:-)</h4>
+                </div>
+
+                <div>
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+                        <div class="form-row">
+                            <label for="name"><span>Name:</span></label>
+                            <input class="single-input" id="name" type="text" name="name" />
+                        </div>
+                        <div class="form-row">
+                            <label for="email"><span>Email:</span></label>
+                            <input class="single-input" id="email" type="email" name="email" />
+                        </div>
+                        <div class="form-row">
+                            <label for="message"><span>Message:</span></label>
+                            <textarea class="double-input" id="message" name="message"></textarea>
+                        </div>
+                        <p>
+                            <div class="btn-container">
+                            <button class="submit-btn" type="submit">Submit</button>
+                            </div>
+                        </p>
+                    </form>
+
+                </div>
             </div>
-            <div>
-                <!-- form -->
-            </div>
+
         </section>
 
     </main>
     
     <section>
-    <footer> 
+    <footer id="footer"> 
         <h3>Footer with info</h3>
         <h2>MJ</h2>
         <span>All rights reserved</span>

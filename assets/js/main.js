@@ -107,6 +107,16 @@ function renderProjects(data) {
     });
 }
 
+const smiley = document.querySelector("#smiley");
+
+smiley.addEventListener("mouseenter", () => {
+    smiley.textContent = ";-)"
+})
+
+smiley.addEventListener("mouseleave", () => {
+    smiley.textContent = ":-)"
+})
+
 
 
 
