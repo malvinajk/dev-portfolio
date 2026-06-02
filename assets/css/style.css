@@ -26,6 +26,9 @@ a {
     text-decoration: none;
     color: inherit;
 }
+a:hover {
+    color: #1242FF;
+}
 
 body {
     background-color: rgba(233, 234, 235, 1);
@@ -337,6 +340,12 @@ header {
     height: 300px;
 }
 
+/*************************** WORK *****************************/
+
+.title-link:hover {
+    color: #1242FF;
+}
+
 /***************************** ABOUT ****************************/
 
 #about {
@@ -505,6 +514,31 @@ form p {
     border-top: 2px dotted black;
 }
 
+#copyright {
+    margin-top: 1em;
+    font-family: "Frasa Regular Italic", serif;
+}
+
+#footer-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer h3,
+#footer h2,
+#footer span {
+    font-size: 1.2rem;
+}
+
+#footer h3 {
+    padding-bottom: 1em;
+    text-decoration: underline dotted;
+}
+
+#l-m {
+    display: inline;
+}
+
 /*********************** SUCCESS PAGE **************************/
 
 .thanks-message {
@@ -527,7 +561,11 @@ form p {
 
 /************************* RESPONSIVE **************************/
 
-@media(max-width: 600px) {
+@media (max-width: 1200px) {
+    html {
+        scroll-snap-type: none;
+    }
+
     .top-menu {
         font-size: 1.5rem;
         gap: 1em;
@@ -538,129 +576,122 @@ form p {
         align-items: center;
         justify-content: flex-start;
         text-align: center;
+        height: auto;
         padding: 1em 0 0 0;
         gap: 1.6em;
+        margin-bottom: 5em;
     }
+
     main,
     header,
     footer {
         padding: 2em;
     }
-    .hero-title.lincoln-letter {
-            font-size: 3.2rem;
-    }
-    .hero-text p {
-        font-size: 1.5rem;
-    }
+
     .gradient {
-        left: 0px
+        left: 0;
     }
+
     .logo:hover h3.logo-title-hidden {
         max-width: 0;
     }
+
     .websites-container {
         flex-direction: column;
         align-items: center;
     }
+
     .websites-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
     }
+
     .websites-image-container {
         align-self: center;
-        padding: 0 0.5em;
+        padding: 0 1em;
     }
-    .websites-text-container h3 {
-        font-size: 1.3rem;
+
+    .websites-image-container video,
+    .websites-image-container img {
+        max-width: 90vw;
     }
-    .websites-text-container span {
-        font-size: 1rem;
-    }
-    .content-section h2 {
-        font-size: 2rem;
-    }  
+
     .about-container {
         flex-direction: column;
     }
+
     #photo-me {
         max-width: fit-content;
     }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    #smiley {
+        margin-bottom: 0;
+    }
+        #footer h3,
+        #footer h2,
+        #footer span {
+            font-size: 1rem;
+        }
 }
 
-@media (min-width: 601px) and (max-width: 767px) {
-    .top-container {
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        text-align: center;
-        padding-top: 3em;
-        gap: 1.6em;
-    }
-    main,
-    header,
-    footer {
-        padding: 2em;
-    }
+@media (max-width: 600px) {
     .hero-title.lincoln-letter {
-            font-size: 5rem;
+        font-size: 3.2rem;
     }
-    .gradient {
-        left: 100px;
+
+    .hero-text p {
+        font-size: 1.5rem;
     }
-    .logo:hover h3.logo-title-hidden {
-        max-width: 0;
+
+    .websites-text-container h3 {
+        font-size: 1.3rem;
     }
-    .websites-container {
-        flex-direction: column;
-        align-items: center;
+
+    .websites-text-container span {
+        font-size: 1rem;
     }
-    .websites-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-    }
-    .websites-content img {
-        align-items: center;
+
+    .content-section h2 {
+        font-size: 2rem;
     }
 }
 
-@media (min-width: 768px) and (max-width: 1200px) {
-    .top-container {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        text-align: center;
-        padding-top: 3em;
-        gap: 1.6em;
-    }
-    main,
-    header,
-    footer {
-        padding: 2em;
-    }
+@media (min-width: 601px) and (max-width: 1200px) {
     .hero-title.lincoln-letter {
-        font-size: 6rem;
+        font-size: 5rem;
     }
-    .gradient {
-        left: 500px;
+
+    .hero-text p {
+        font-size: 2rem;
     }
-    .logo:hover h3.logo-title-hidden {
-        max-width: 0;
+
+    .about-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "content content"
+            "photo services";
+        align-items: start;
     }
-    .websites-container {
-        flex-direction: column;
-        align-items: center;
+
+    .about-content {
+        grid-area: content;
     }
-    .websites-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
+
+    #photo-me {
+        grid-area: photo;
+        width: 100%;
+        justify-self: center;
+        max-width: 80%;
     }
-    .websites-content img {
-        align-items: center;
+
+    .services-container {
+        grid-area: services;
     }
 }

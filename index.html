@@ -141,10 +141,28 @@
     </main>
     
     <section>
-    <footer id="footer"> 
-        <h3>Footer with info</h3>
-        <h2>MJ</h2>
-        <span>All rights reserved</span>
+    <footer id="footer">
+        <div id="footer-info">
+        <div id="typefaces-info-container">
+            <h3>Typefaces used</h3>
+            <h2>Frasa Regular & Italic</h2>
+            <h2 id="l-m">Lincoln/MITRE:</h2>
+            <a href="l-mitre.html" target="_blank"><span>More info</span></a>
+        </div>
+        <div>
+            <h3>Designed and developed by</h3>
+            <h2>Malvina Janasik</h2>
+        </div>
+        </div>
+        <div id="copyright" align="center">
+            &copy; 2026 www.malvinajanasik.com - All Rights Reserved.
+        </div>
+        <script>
+            (() => {
+                const copyrightElement = document.getElementById("copyright");
+                copyrightElement.innerHTML = "&copy;  " + new Date().getFullYear() + " www.malvinajanasik.com - All Rights Reserved.";
+            })();
+        </script>
     </footer>
     </section>
     <script src="assets/js/main.js"></script>

@@ -16,6 +16,7 @@ loadProjects();
 
 const containerWorks = document.querySelector(".websites-container");
 const isMobile = window.innerWidth < 600;
+const isTablet = window.innerWidth >= 601 && window.innerWidth <= 1200;
 
 // if on mobile, use the second video, else the first one. Ensures responsiveness across devices
 function getVideoSrc(projectId) {
@@ -46,15 +47,36 @@ function createMediaElement(project) {
 function setupVideoBehaviour (imageItem) {
     const video = imageItem.querySelector("video")
     if(!video) return;
-    isMobile ? video.play() :
-        (video.addEventListener("mouseenter", () => video.play()),
-        video.addEventListener("mouseleave", () => video.pause()));
+
+    if(isMobile) {
+        video.play();
+        return;
+    }
+
+    if(isTablet) {
+        video.addEventListener("click", () => {
+            if(video.paused) {
+                video.play();
+                return;
+            }
+
+            video.pause();
+        });
+        return;
+    }
+
+    video.addEventListener("mouseenter", () => video.play());
+    video.addEventListener("mouseleave", () => video.pause());
 }
 
-function createTextItem(num, title) {
+function createTextItem(num, title, link) {
     const textItem = document.createElement("div");
+    const titleLink = link 
+        ? `<a href="${link}" target="_blank"><h3 class="title-link">${title}</h3></a>`
+        : `<h3>${title}</h3>`;
     textItem.classList.add("websites-text-container");
-    textItem.innerHTML = `<span>${num}</span><h3>${title}</h3><span class="push-right more-info-btn">More Info +</span>`;
+
+    textItem.innerHTML = `<span>${num}</span>${titleLink}<span class="push-right more-info-btn">More Info +</span>`;
     return textItem;
 }
 
@@ -88,12 +110,11 @@ function renderProjects(data) {
         item.classList.add("websites-content");
         imageItem.classList.add("websites-image-container");
 
-        const textItem = createTextItem(num, project.title);
+        const textItem = createTextItem(num, project.title, project.link);
         const infoPanel = createInfoPanel(project);
 
         imageItem.innerHTML = createMediaElement(project);
         setupVideoBehaviour(imageItem);
-
         const moreInfoBtn = textItem.querySelector(".more-info-btn");
         moreInfoBtn.addEventListener("click", () => {
             infoPanel.classList.toggle("open-panel");
@@ -116,6 +137,12 @@ smiley.addEventListener("mouseenter", () => {
 smiley.addEventListener("mouseleave", () => {
     smiley.textContent = ":-)"
 })
+
+if(isMobile || isTablet) {
+    setInterval(() => {
+        smiley.textContent = smiley.textContent === ":-)" ? ";-)" : ":-)"
+    }, 1000);
+}
 
 
 
