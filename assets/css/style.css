@@ -500,7 +500,8 @@ form p {
     cursor: pointer;
 }
 
-.submit-btn:hover {
+.submit-btn:hover,
+.back-to-page:hover {
     background-color: #1242FF;
 }
 
@@ -550,16 +551,6 @@ form p {
     padding-top: 20em;
     gap: 1em;
 }
-
-/* .back-to-page {
-    padding: 0.6em;
-    border-radius: 30px;
-    font-family: "Frasa Regular Italic", serif;
-    font-size: 1rem;
-    cursor: pointer;
-    color: ;
-    background-color: black;
-} */
 
 /************************* RESPONSIVE **************************/
 
