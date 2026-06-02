@@ -488,7 +488,8 @@ form p {
     height: 200px;
 }
 
-.submit-btn {
+.submit-btn,
+.back-to-page {
     padding: 0.6em;
     border: none;
     border-radius: 20px;
@@ -550,14 +551,15 @@ form p {
     gap: 1em;
 }
 
-.back-to-page {
+/* .back-to-page {
     padding: 0.6em;
     border-radius: 30px;
     font-family: "Frasa Regular Italic", serif;
     font-size: 1rem;
     cursor: pointer;
-    border: 1px solid black;
-}
+    color: ;
+    background-color: black;
+} */
 
 /************************* RESPONSIVE **************************/
 
