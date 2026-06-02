@@ -95,8 +95,8 @@ function createMarquee(stack) {
     const stackStr = (stack.join(" • ") + " • ").repeat(5);
     const duration = stackStr.length * 0.15;
     return `<div class="marquee-track" style="animation-duration:${duration}s">
-                <h4>${stackStr}</h4>
-                <h4>${stackStr}</h4>
+                <span class="marquee">${stackStr}</span>
+                <span class="marquee">${stackStr}</span>
             </div>`;
 }
 

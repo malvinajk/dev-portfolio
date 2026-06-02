@@ -306,6 +306,9 @@ header {
     padding: 1em 0 1em 0;
 }
 
+.marquee {
+    font-family: "LincolnMITRE 5x7", serif;
+}
 .marquee-track {
     display: flex;
     gap: 2rem;
@@ -453,10 +456,8 @@ header {
 }
 
 #smiley {
+    font-family: "LincolnMITRE 5x7", serif;
     font-size: 5rem;
-    margin: 1em auto;
-    height: fit-content;
-    width: fit-content;
 }
 
 form p {
