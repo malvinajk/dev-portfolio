@@ -455,9 +455,18 @@ header {
     font-size: 1.5rem;
 }
 
+#smiley-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+}
+
 #smiley {
     font-family: "LincolnMITRE 5x7", serif;
     font-size: 5rem;
+}
+#smiley::first-letter {
+    font-family: "LincolnMITRE 5x7",serif;
 }
 
 form p {
