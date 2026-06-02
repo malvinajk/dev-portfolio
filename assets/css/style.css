@@ -78,7 +78,7 @@ main, header, footer {
 #work h2, 
 #contact h2,
 #about h2 {
-    border-bottom: 1px black solid;
+    border-bottom: 2px black dotted;
     padding-bottom: 0.5em;
     font-size: 3rem;
 }
@@ -192,7 +192,7 @@ header {
 .hero-text-container {
     display: flex;
     padding-bottom: 0.5em;
-    border-bottom: 1px solid black;
+    border-bottom: 2px dotted black;
 }
 
 .hero-text-container > *:nth-child(3) {
