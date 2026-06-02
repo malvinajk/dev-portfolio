@@ -37,7 +37,7 @@ function createMediaElement(project) {
                 `
     }
     return `<picture>
-                <source media="(min-width: 600px)" srcset="${project.images.desktop}">
+                <source media="(min-width: 600px)" srcset="${project.images.desktop}" type="image/webp">
                 <img src="${project.images.mobile}" alt="${project.title}" loading="lazy">
             </picture>
             `

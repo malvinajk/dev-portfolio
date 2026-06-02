@@ -1,30 +1,20 @@
-@font-face {
-    font-family: "LincolnMITRE";
-    src: url(../fonts/LincolnSlashMITRE/LincolnMITRE-LM.otf);
-    font-display: swap;
-}
 
 @font-face {
     font-family: "LincolnMITRE 5x7";
-    src: url(../fonts/LincolnSlashMITRE/LincolnMITRE-LM5x7.otf);
+    src: url(../fonts/LincolnSlashMITRE/LincolnMITRE-LM5x7.woff2);
     font-display: swap;
 }
 
-@font-face {
-    font-family: "LincolnMITRE 7x9";
-    src: url(../fonts/LincolnSlashMITRE/LincolnMITRE-LM7x9.otf);
-    font-display: swap;
-}
 
 @font-face {
     font-family: "Frasa Regular";
-    src: url(../fonts/Frasa/Frasa-Regular.otf);
+    src: url(../fonts/Frasa/Frasa-Regular.woff2);
     font-display: swap;
 }
 
 @font-face {
     font-family: "Frasa Regular Italic";
-    src: url(../fonts/Frasa/Frasa-Regular-Italic.otf);
+    src: url(../fonts/Frasa/Frasa-Regular-Italic.woff2);
     font-display: swap;
 }
 
