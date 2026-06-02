@@ -155,7 +155,7 @@ h3.logo-title-hidden {
     bottom: 0;
     width: 0;
     height: 1px;
-    background-color: black;
+    background-color: #1242FF;
 
     transition: width 0.3s ease-in-out;
 }
