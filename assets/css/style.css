@@ -277,7 +277,10 @@ header {
     padding-bottom: 5em;
 }
 
-.push-right {
+
+.more-info-btn {
+    border: none;
+    background-color: transparent;
     margin-left: auto;
     cursor: pointer;
 }

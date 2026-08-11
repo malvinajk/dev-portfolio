@@ -76,7 +76,7 @@ function createTextItem(num, title, link) {
         : `<h3>${title}</h3>`;
     textItem.classList.add("websites-text-container");
 
-    textItem.innerHTML = `<span>${num}</span>${titleLink}<span class="push-right more-info-btn">More Info +</span>`;
+    textItem.innerHTML = `<span>${num}</span>${titleLink}<button class="more-info-btn push-right"><span class="btn-label">More Info +</span></button>`;
     return textItem;
 }
 
@@ -118,7 +118,8 @@ function renderProjects(data) {
         const moreInfoBtn = textItem.querySelector(".more-info-btn");
         moreInfoBtn.addEventListener("click", () => {
             infoPanel.classList.toggle("open-panel");
-            moreInfoBtn.textContent = infoPanel.classList.contains("open-panel") ? "Less Info –" : "More Info +"
+            const label = moreInfoBtn.querySelector(".btn-label");
+            label.textContent = infoPanel.classList.contains("open-panel") ? "Less Info –" : "More Info +";
         });
 
         item.appendChild(textItem);
